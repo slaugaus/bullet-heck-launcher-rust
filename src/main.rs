@@ -1,3 +1,7 @@
+// Imports ui.slint via the build script(?)
+slint::include_modules!();
+
 fn main() {
-    println!("Hello, world!");
+    // Draw the main window
+    MainWindow::new().unwrap().run().unwrap();
 }
