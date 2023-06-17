@@ -14,5 +14,3 @@ target/
 *.pdb
 
 */target
-*.exe
-*.pdb

@@ -1,0 +1,59 @@
+import { Button, AboutSlint } from "std-widgets.slint";
+import "./assets/unoestado.ttf";
+
+export component MainWindow inherits Window { 
+    default-font-family: "Uno Estado";
+    default-font-size: 24px;
+    icon: @image-url("assets/icon_32.png");
+    title: "Bullet Heck! Launcher";
+
+    in-out property <bool> show_about;
+
+    // height: self.show_about ? 500px : 520px;
+
+    callback run-game();
+    callback open-settings();
+    callback open-credits();
+
+    VerticalLayout {
+        Image {
+            source: @image-url("assets/logo_half.gif");
+            width: 400px;
+            height: 225px;
+        }
+
+        Button {
+            text: "Play";
+            clicked => { root.run-game(); }
+        }
+
+        Button {
+            text: "Settings";
+            clicked => { root.open-settings(); }
+        }
+
+        Button {
+            text: "Credits";
+            clicked => {
+                root.open-credits();
+                popup.show();
+            }
+        }
+
+        popup := PopupWindow {
+            height: 100px;
+            width: 200px;
+            x: 100px;
+            y: 50px;
+            Rectangle {
+                height: 100%;
+                width: 100%;
+                background: gray;
+            }
+            AboutSlint{
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+}
