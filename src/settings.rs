@@ -34,7 +34,7 @@ macro_rules! gen_settings_window { ()=>{
                     ComboBox {
                         model: [
                             "1366 x 768",
-                            "wenis"
+                            "1600 x 900"
                         ];
                         selected(value) => {root.res-changed(value);}
                     }

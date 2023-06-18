@@ -1,5 +1,3 @@
-// use slint::ComponentHandle;
-
 // Imports MainWindow.slint via the build script(?)
 slint::include_modules!();
 // Stupid, but necessary, hack to do multi-window Slint
@@ -52,11 +50,11 @@ macro_rules! sett_button_callbacks {($sett_win:expr) => {
         println!("{} changed to {}", name, value);
     });
 
-    let handle = $sett_win.as_weak();
+    // let handle = $sett_win.as_weak();
 
     $sett_win.on_save(|| {
         println!("Save !");
-        // TODO need a creative way to call hide()
+        // TODO need a creative way to call hide() since move keyword doesn't work here
     });
 
     $sett_win.on_reset(|| {

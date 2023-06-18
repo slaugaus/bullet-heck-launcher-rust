@@ -7,6 +7,4 @@ fn main() {
         .with_style("fluent".to_string());
     // Compiles the project including src/ui.slint
     slint_build::compile_with_config("ui/MainWindow.slint", config).unwrap();
-    // slint_build::compile("ui/SettingsWindow.slint").unwrap();
-    // slint_build::compile("ui/CreditsWindow.slint").unwrap();
 }
